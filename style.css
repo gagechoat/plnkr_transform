@@ -1,2 +1,32 @@
-/* Styles go here */
-
+a {
+	color: blue;
+	cursor: pointer;
+}
+h4 {
+	margin: 0 0 0.5em;
+	font-size: 1em;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+input {
+	width: 50px;
+}
+textarea {
+	border: 1px solid #ccc;
+	clear: none;
+	height: 400px;
+	float: right;
+	width: 40%;
+}
+.group {
+	clear: left;
+	float: left;
+	margin: 0 0 1em;
+	padding: 0;
+	width: 40%;
+}

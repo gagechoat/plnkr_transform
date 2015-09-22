@@ -1,5 +1,5 @@
-<ul class="my-object-inputs">
-	<li ng-repeat="numbersArr in transformedObj">
-		<input type="text" ng-repeat="numbers in numbersArr" ng-model="numbers.number" />
+<ul>
+	<li class="my-object-inputs" ng-repeat="arr in transformedObjs">
+		<input type="text" ng-repeat="item in arr" ng-model="item.number" />
 	</li>
 </ul>

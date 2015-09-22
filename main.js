@@ -1,26 +1,69 @@
-angular
-.module('improveDataBinding',[])
-.controller('MainCtrl', ['$scope', 'dataInput', '$timeout', '$filter',
-  function ($scope, dataInput, $timeout, $filter) {
+var myApp = angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainCtrl', ['$scope', '$filter',
+  function ($scope, $filter) {
     $scope.myData = {
       myGroups : [
         {
+          myGroupName: 'First',
           myObjs : [
             {
-              color: 'goldenrod',
+              order: 0,
               number : 'one'
             },
             {
-              color: 'burlywood',
+              order: 0,
               number : 'two'
             },
             {
-              color: 'rebeccapurple ',
+              order: 1,
               number : 'three'
             },
             {
-              color: 'thistle',
+              order: 1,
               number : 'four'
+            }
+          ]
+        },
+        {
+          myGroupName: 'Second',
+          myObjs : [
+            {
+              order: 0,
+              number : 'five'
+            },
+            {
+              order: 0,
+              number : 'six'
+            },
+            {
+              order: 1,
+              number : 'seven'
+            },
+            {
+              order: 1,
+              number : 'eight'
+            }
+          ]
+        },
+        {
+          myGroupName: 'Third',
+          myObjs : [
+            {
+              order: 0,
+              number : 'nine'
+            },
+            {
+              order: 0,
+              number : 'nine'
+            },
+            {
+              order: 1,
+              number : 'nine'
+            },
+            {
+              order: 1,
+              number : 'nine'
             }
           ]
         }

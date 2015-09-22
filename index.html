@@ -11,11 +11,13 @@
   <body>
     <h1>Explore Data Binding with Data Transformation</h1>
     
-    <div ng-app="improveDataBinding">
+    <div ng-app="myApp">
       <div ng-controller="MainCtrl">
-        <div ng-repeat="group in myData.groups">
-          <my-object-inputs ng-model="group.objs"></my-object-inputs>
-        </div><!-- end song-section -->
+        <textarea disabled='disabled'>{{ myData | json }}</textarea>
+        <div class="group" ng-repeat="group in myData.myGroups">
+          <h4>{{ group.myGroupName }}</h4>
+          <my-object-inputs ng-model="group.myObjs"></my-object-inputs>
+        </div>
       </div>
     </div>
   </body>
