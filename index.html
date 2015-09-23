@@ -9,17 +9,26 @@
   </head>
 
   <body>
-    <h1>Explore Data Binding with Transformation</h1>
+    <h1>Data Binding with Directive Transformation</h1>
+
+    <p>Problem: When "Shuffle Numbers" is clicked, properties in the myData object in the root scope are updated. However, the myObjectInput child directives, which contain transformed data based on myData, do not update.<p>
     
     <div ng-app="myApp" ng-controller="MainCtrl">
-      <textarea disabled='disabled'>{{ myData | json }}</textarea>
-      <div class="group" ng-repeat="group in myData.myGroups">
-        <h4>{{ group.myGroupName }}</h4>
-        <my-object-inputs ng-model="group.myObjs"></my-object-inputs>
-        <!-- <a ng-click="duplicateGroup( group )">Duplicate</a>
-        <a ng-click="removeGroup( group )">Remove</a> -->
+      <div class="left">
+        <h2>Directives Data</h2>
+        <div class="group" ng-repeat="group in myData.myGroups">
+          <h4>{{ group.myGroupName }} 
+            <a class="btn" ng-click="duplicateGroup( group )">+</a>
+            <a class="btn" ng-click="removeGroup( group )">-</a>
+          </h4>
+          <my-object-inputs ng-model="group.myObjs"></my-object-inputs>
+        </div>
+        <div class="group"><a class="btn" ng-click="shuffle()">Shuffle Numbers</a></div>
       </div>
-      <div class="group"><a ng-click="reorder()">Reorder</a></div>
+      <div class="right">
+        <h2>Root Data</h2>
+        <textarea disabled='disabled'>{{ myData | json }}</textarea>
+      </div>
     </div>
   </body>
 </html>

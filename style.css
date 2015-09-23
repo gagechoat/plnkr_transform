@@ -2,9 +2,16 @@ a {
 	color: blue;
 	cursor: pointer;
 }
+h2 {
+	margin: 0 0 0.5em;
+	font-size: 1.2em;
+}
 h4 {
 	margin: 0 0 0.5em;
 	font-size: 1em;
+}
+p {
+	max-width: 600px;
 }
 ul {
 	margin: 0;
@@ -18,15 +25,26 @@ input {
 }
 textarea {
 	border: 1px solid #ccc;
-	clear: none;
+	box-sizing: border-box;
 	height: 400px;
-	float: right;
-	width: calc(100% - 300px);
+	width: 100%;
+}
+.btn {
+	background: #ddd;
+	padding: 0 5px;
 }
 .group {
-	clear: left;
-	float: left;
 	margin: 0 0 1em;
+}
+.left {
+	clear: none;
+	float: left;
 	padding: 0;
 	width: 250px;
+}
+.right {
+	clear: none;
+	float: left;
+	max-width: 600px;
+	width: calc(100% - 300px);
 }
