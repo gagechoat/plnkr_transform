@@ -9,16 +9,17 @@
   </head>
 
   <body>
-    <h1>Explore Data Binding with Data Transformation</h1>
+    <h1>Explore Data Binding with Transformation</h1>
     
-    <div ng-app="myApp">
-      <div ng-controller="MainCtrl">
-        <textarea disabled='disabled'>{{ myData | json }}</textarea>
-        <div class="group" ng-repeat="group in myData.myGroups">
-          <h4>{{ group.myGroupName }}</h4>
-          <my-object-inputs ng-model="group.myObjs"></my-object-inputs>
-        </div>
+    <div ng-app="myApp" ng-controller="MainCtrl">
+      <textarea disabled='disabled'>{{ myData | json }}</textarea>
+      <div class="group" ng-repeat="group in myData.myGroups">
+        <h4>{{ group.myGroupName }}</h4>
+        <my-object-inputs ng-model="group.myObjs"></my-object-inputs>
+        <!-- <a ng-click="duplicateGroup( group )">Duplicate</a>
+        <a ng-click="removeGroup( group )">Remove</a> -->
       </div>
+      <div class="group"><a ng-click="reorder()">Reorder</a></div>
     </div>
   </body>
 </html>
