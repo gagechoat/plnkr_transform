@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp',[]);
 
-angular.module('myApp').controller('MainCtrl', ['$scope', '$filter',
+myApp.controller('MainCtrl', ['$scope', '$filter',
   function ($scope, $filter) {
     $scope.myData = {
       myGroups : [
@@ -94,18 +94,13 @@ angular.module('myApp').controller('MainCtrl', ['$scope', '$filter',
     $scope.duplicateGroup = function( group ) {
       $scope.myData.myGroups.push( angular.copy( group ) );
       $scope.myData.myGroups[$scope.myData.myGroups.length-1].myObjs = angular.copy(group.myObjs);
-
-      //console.log( 'duplicateSection: section = ' ); console.dir( section );
-      //console.log( 'duplicateSection: newSection = ' ); console.dir( newSection );
     };
 
     $scope.removeGroup = function( group ) {
-      //console.log('removeSection (before): section = '); console.dir(section);
       if ( $scope.myData.myGroups.length > 1 ) {
         var index = $scope.myData.myGroups.indexOf( group );
         $scope.myData.myGroups.splice(index, 1);
       }
-      //console.log('removeSection (after): section = '); console.dir(section);
     };
   }
 ]);

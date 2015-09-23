@@ -1,4 +1,4 @@
-angular.module('myApp').directive('myObjectInputs', function() {
+myApp.directive('myObjectInputs', function() {
   var controller = ['$scope', function ($scope) {
     $scope.transformedObjs = [];
     $scope.showTransformedObjs = function() {
@@ -19,8 +19,6 @@ angular.module('myApp').directive('myObjectInputs', function() {
       
       // transform to new data format
       ngModelCtrl.$formatters.push( function(modelValue) {
-        //console.log('formatters go: modelValue = '); console.dir(modelValue);
-
         var transformedData = [[],[]];
         
         for (var i=0; i<modelValue.length; i++) {
@@ -42,15 +40,12 @@ angular.module('myApp').directive('myObjectInputs', function() {
             });
           }
         }
-        
-        //console.log('formatters returning '); console.dir(transformedData);
+
         return transformedData;
       });
       
       // transform back to original data format
       ngModelCtrl.$parsers.push( function(viewValue) {
-        //console.log('parsers go: viewValue = '); console.dir(viewValue);
-
         var untransformedData = [];
         
         for (var i=0; i<viewValue.length; i++) {
@@ -75,19 +70,16 @@ angular.module('myApp').directive('myObjectInputs', function() {
           }
         }
       
-        //console.log('parsers returning: '); console.dir(untransformedData);
         return untransformedData;
       });
     
       // watch for updates to data
       $scope.$watch('transformedObjs', function() {
-        //console.log('watch go');
         ngModelCtrl.$setViewValue( angular.copy( $scope.transformedObjs ) );
       }, true);
       
       // update view
       ngModelCtrl.$render = function() {
-        //console.log('render go: viewValue = '); console.dir(ngModelCtrl.$viewValue);
         $scope.transformedObjs = ngModelCtrl.$viewValue;
       };
     }
