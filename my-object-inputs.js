@@ -1,8 +1,62 @@
 myApp.directive('myObjectInputs', function() {
   var controller = ['$scope', function ($scope) {
     $scope.transformedObjs = [];
+
     $scope.showTransformedObjs = function() {
       console.log('transformedObjs = ');console.dir($scope.transformedObjs);
+    };
+
+    // // add more numbers to this item
+    // $scope.more = function() {
+    //   for ( var i = 0; i < $scope.transformedObjs.length; i++ ) {
+    //     $scope.transformedObjs[i].push({
+    //       order: i,
+    //       number: 0
+    //     })
+    //   }
+    // };
+
+    // // remove numbers from this item
+    // $scope.less = function() {
+    //   // for ( var i = 0; i < $scope.transformedObjs.length; i++ ) {
+    //   //   $scope.transformedObjs[i].pop();
+    //   // }
+    //   if ( $scope.transformedObjs.length > 1 ) {
+    //     var index = $scope.barData.indexOf( bar );
+    //     $scope.barData.splice(index, 1);
+    //   }
+    // };
+
+    // $scope.removeBar = function( bar ) {
+    //     //console.log('removeBar: barData length = ' + $scope.barData.length + ', indexOf bar = ' + $scope.barData.indexOf( bar ) + ', barData (before) = '); console.dir($scope.barData);
+    //     if ( $scope.barData.length > 1 ) {
+    //         var index = $scope.barData.indexOf( bar );
+    //         $scope.barData.splice(index, 1);
+    //     } else {
+    //         $scope.barData = [[
+    //             {
+    //                 'chord':''
+    //             },
+    //             {
+    //                 'chord':''
+    //             },
+    //             {
+    //                 'chord':''
+    //             },
+    //             {
+    //                 'chord':''
+    //             }
+    //         ]];
+    //     }
+    //     //console.log('removeBar: barData (after) = '); console.dir($scope.barData);
+    // };
+
+    // remove numbers from this item
+    $scope.reset = function(arr) {
+      var index = $scope.transformedObjs.indexOf( arr );
+      for (var i = 0; i < $scope.transformedObjs[index].length; i++ ) {
+        $scope.transformedObjs[index][i].number = 0;
+      }
     };
   }];
   

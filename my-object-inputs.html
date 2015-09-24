@@ -1,5 +1,8 @@
 <ul>
 	<li class="my-object-inputs" ng-repeat="arr in transformedObjs">
 		<input type="text" ng-repeat="item in arr" ng-model="item.number" />
+		<!-- <a class="btn" ng-click="less(arr)">Less</a> -->
+		<a class="btn" ng-click="reset(arr)">Reset</a>
 	</li>
+	<!-- <li><a class="btn" ng-click="more()">More</a></li> -->
 </ul>
